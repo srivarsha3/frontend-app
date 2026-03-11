@@ -10,7 +10,7 @@ function Content() {
     setCount(count - 1);
   };
   const fetchProducts = async () => {
-    const url = "http://localhost:5000/store";
+    const url = "https://backend-app-lthu.onrender.com/store";
     const res = await axios.get(url);
     setProducts(res.data);
   };
