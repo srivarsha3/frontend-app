@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../App";
 import axios from "axios";
@@ -44,9 +43,3 @@ function Orders() {
   );
 }
 export default Orders;
-=======
-function Orders(){
-    return <h1>My Orders</h1>
-}
-export default Orders
->>>>>>> f01d12072a1eaf8e1f8f6e2cc3f88c668d4f91e7

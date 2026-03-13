@@ -4,7 +4,6 @@ import { AppContext } from "../App";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 function Login() {
-<<<<<<< HEAD
   const { user, setUser,cart } = useContext(AppContext);
   const API_URL = import.meta.env.VITE_API_URL;
   const Navigate = useNavigate();
@@ -14,16 +13,6 @@ function Login() {
     setUser(response.data);
     if (cart.length > 0) Navigate("/cart");
     else Navigate("/");
-=======
-  const { user, setUser } = useContext(AppContext);
-  const API_URL = import.meta.env.VITE_API_URL;
-  const Navigate = useNavigate()
-  const handleLogin = async () => {
-    const url = API_URL + "/auth/signin";
-    const response = await axios.post(url, user);
-    setUser(response)
-    Navigate("/")
->>>>>>> f01d12072a1eaf8e1f8f6e2cc3f88c668d4f91e7
   };
   return (
     <div>

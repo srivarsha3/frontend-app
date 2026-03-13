@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../App";
@@ -8,12 +7,6 @@ function Cart() {
   const [orderValue, setOrderValue] = useState(0);
   const API_URL = import.meta.env.VITE_API_URL;
   const Navigate = useNavigate();
-=======
-import { useContext } from "react";
-import { AppContext } from "../App";
-function Cart() {
-  const { cart, setCart } = useContext(AppContext);
->>>>>>> f01d12072a1eaf8e1f8f6e2cc3f88c668d4f91e7
   const increment = (id) => {
     setCart(
       cart.map((item) => {
@@ -36,7 +29,6 @@ function Cart() {
       }),
     );
   };
-<<<<<<< HEAD
 
   useEffect(() => {
     setOrderValue(
@@ -62,17 +54,11 @@ function Cart() {
     }
   };
 
-=======
->>>>>>> f01d12072a1eaf8e1f8f6e2cc3f88c668d4f91e7
   return (
     <div>
       <h1>My Cart</h1>
       <ol>
-<<<<<<< HEAD
         {cart && cart.map((item) => (
-=======
-        {cart.map((item) => (
->>>>>>> f01d12072a1eaf8e1f8f6e2cc3f88c668d4f91e7
           <li key={item._id}>
             {item.name}-{item.price}-
             <button onClick={() => decrement(item._id)}>-</button>
@@ -82,7 +68,6 @@ function Cart() {
           </li>
         ))}
       </ol>
-<<<<<<< HEAD
       <p>
         <strong>Order Value:{orderValue}</strong>
       </p>
@@ -94,9 +79,3 @@ function Cart() {
   );
 }
 export default Cart;
-=======
-    </div>
-  );
-}
-export default Cart;
->>>>>>> f01d12072a1eaf8e1f8f6e2cc3f88c668d4f91e7
