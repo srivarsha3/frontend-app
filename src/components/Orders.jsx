@@ -8,7 +8,9 @@ function Orders() {
 
   const fetchOrders = async () => {
     const url = `${API_URL}/orders/${user.email}`;
-    const response = await axios.get(url);
+    const response = await axios.get(url, {
+      headers: { Authorization: `Bearer ${user.token}` },
+    });
     setOrders(response.data);
   };
 
@@ -25,8 +27,11 @@ function Orders() {
             <div key={order._id}>
               <h3>Order Id: {order.orderDate}</h3>
               <ol>
-                {order.items.map(item=>(
-                    <li key={item._id}>{item.name}-{item.price}-{item.quantity}-{item.price*item.quantity}</li>
+                {order.items.map((item) => (
+                  <li key={item._id}>
+                    {item.name}-{item.price}-{item.quantity}-
+                    {item.price * item.quantity}
+                  </li>
                 ))}
               </ol>
               <h3>Order Value: {order.orderValue}</h3>

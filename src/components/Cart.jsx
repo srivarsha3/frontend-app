@@ -72,7 +72,8 @@ function Cart() {
         <strong>Order Value:{orderValue}</strong>
       </p>
       <p>
-        <button onClick={placeOrder}>Place Order</button>
+        {user?.email ?  <button onClick={placeOrder}>Place Order</button> :  <button onClick={()=>Navigate("/login")}>Login to Order</button> }
+       
       </p>
     </div>
   );
